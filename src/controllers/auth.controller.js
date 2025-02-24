@@ -44,7 +44,7 @@ export const login = async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    const UserFound = await User.findOne({ email });
+    const UserFound = await User.findOne({ email }).select("+password");
 
     if (!UserFound) {
       return res.status(400).json({ msg: "Usuario no encontrado" }); //respuesta si no escuentra usuario
