@@ -1,8 +1,12 @@
 function Home() {
     return (
+        <>
+            <h1>Welcome</h1>
+            <button onClick={() => {
+                window.location.href = '/tasks'
+            }}>go to Tasks</button>
 
-        <h1>Bienvenido a la lista de tareas</h1>
-
+        </>
     )
 }
 

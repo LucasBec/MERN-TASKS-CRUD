@@ -1,7 +1,6 @@
 function Login() {
     return (
         <>
-
             <h1>Login</h1>
             <form>
                 <input type="text" placeholder="Email" />
