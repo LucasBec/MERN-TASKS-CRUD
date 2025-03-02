@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
+import { registerRequest } from "../api/auth";
 
 
 function Register() {
@@ -11,8 +12,9 @@ function Register() {
         formState: { errors },
     } = useForm();
 
-    const onSubmit = (data) => {
-        console.log("Formulario enviado:", data);
+    const onSubmit = async (data) => {
+        const res = await registerRequest(data);
+        console.log(res);
         toast.success("Account created succesfully!");
     };
 
